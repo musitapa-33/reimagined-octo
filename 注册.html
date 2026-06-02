@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 穆斯塔怕的个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 注册表单专用样式 */
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .return-link {
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .return-link:hover {
+            text-decoration: underline;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        
+        .button-group {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button,
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="submit"] {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #5a67d8;
+        }
+        
+        input[type="reset"] {
+            background-color: #e53e3e;
+            color: white;
+        }
+        
+        input[type="reset"]:hover {
+            background-color: #c53030;
+        }
+        
+        input[type="button"] {
+            background-color: #4299e1;
+            color: white;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #3182ce;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .button-group {
+                flex-direction: column;
+            }
+            
+            button,
+            input[type="submit"],
+            input[type="reset"],
+            input[type="button"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="首页.html" target="_blank" class="return-link">返回首页</a>
+        
+        <h2>注册</h2>
+        
+        <form>
+            <div class="form-group">
+                <label for="username">用户名:</label>
+                <input type="text" id="username" value="穆斯塔怕" maxlength="10" />
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" id="password" size="20">
+            </div>
+            
+            <div class="form-group">
+                <label>性别：</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sex" checked="checked" id="man">男</label>
+                    <label><input type="radio" name="sex" id="woman">女</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>兴趣爱好：</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" />编程</label>
+                    <label><input type="checkbox" />唱歌跳舞</label>
+                    <label><input type="checkbox" />游泳</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="avatar">上传头像：</label>
+                <input type="file" id="avatar" />
+            </div>
+            
+            <div class="button-group">
+                <input type="submit" value="注册">
+                <input type="reset" value="重置">
+                <input type="button" value="普通">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

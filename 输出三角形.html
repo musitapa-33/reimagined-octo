@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>实训2.输出三角形</title>
+		<script type="text/javascript">
+			document.write("<center>");
+			var t = prompt("请输入一个整数", "");
+			if(t > 5) {
+				for(var i = t; i > 0; i--) {
+					for(var j = 0; j < i; j++) {
+						document.write("*&nbsp;&nbsp;");
+					}
+					document.write("<br />");
+				}
+			} else {
+				for(var k = t; k > 0; k--) {
+					for(var m = 0; m < k; m++) {
+						document.write("*&nbsp;&nbsp;");
+					}
+					document.write("<br />");
+				}
+				for(var n = 1; n <= t; n++) {
+					for(var h = 0; h < n; h++) {
+						document.write("*&nbsp;&nbsp;");
+					}
+					document.write("<br />");
+				}
+			}
+			document.write("</center>");
+		</script>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>

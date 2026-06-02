@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程表 - 穆斯塔怕的个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 课程表专用样式 */
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .schedule-title {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .schedule-table tr:hover td {
+            background-color: #e8f0fe;
+            transform: scale(1.03);
+        }
+        
+        .schedule-table td:first-child {
+            font-weight: 600;
+            background-color: #f8f9fa;
+            border-right: 2px solid #667eea;
+        }
+        
+        .schedule-table .lunch {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .schedule-table .weekend {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* 课程类别样式 */
+        .math {
+            background-color: #ffeaa7;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .chinese {
+            background-color: #a29bfe;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .english {
+            background-color: #74b9ff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .pe {
+            background-color: #00b894;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .politics {
+            background-color: #fd79a8;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .programming {
+            background-color: #fdcb6e;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .web {
+            background-color: #e17055;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .schedule-container {
+                overflow-x: auto;
+                padding: 10px;
+            }
+            
+            .schedule-table {
+                min-width: 600px;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 10px 5px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header>
+            <h1>课程表</h1>
+            <p>我的学习安排</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav>
+            <div class="nav-container">
+                <a href="首页.html" target="_blank">首页</a>
+                <a href="我的作品.html" target="_blank">我的作品</a>
+                <a href="个人成长.html" target="_blank">个人成长</a>
+                <a href="唐诗宋词.html" target="_blank">唐诗宋词</a>
+                <a href="简历.html" target="_blank">简历</a>
+                <a href="电影.html" target="_blank">电影</a>
+                <a href="注册.html" target="_blank">注册</a>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="schedule-container">
+                <h2 class="schedule-title">我的课程表</h2>
+                
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>星期节次</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期日</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-2</td>
+                            <td><span class="math">高等数学</span></td>
+                            <td><span class="chinese">语文</span></td>
+                            <td><span class="pe">体育</span></td>
+                            <td><span class="english">英语</span></td>
+                            <td><span class="politics">政治</span></td>
+                            <td rowspan="5" class="weekend">双休</td>
+                            <td rowspan="5" class="weekend">双休</td>
+                        </tr>
+                        <tr>
+                            <td>3-4</td>
+                            <td><span class="english">英语</span></td>
+                            <td><span class="math">高等数学</span></td>
+                            <td><span class="chinese">语文</span></td>
+                            <td><span class="programming">C语言</span></td>
+                            <td><span class="pe">体育</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="lunch">午休时间</td>
+                        </tr>
+                        <tr>
+                            <td>5-6</td>
+                            <td><span class="chinese">语文</span></td>
+                            <td><span class="math">高等数学</span></td>
+                            <td><span class="english">英语</span></td>
+                            <td><span class="politics">政治</span></td>
+                            <td><span class="programming">C语言</span></td>
+                        </tr>
+                        <tr>
+                            <td>7-8</td>
+                            <td><span class="chinese">语文</span></td>
+                            <td><span class="math">高等数学</span></td>
+                            <td><span class="english">英语</span></td>
+                            <td><span class="pe">体育</span></td>
+                            <td><span class="web">网页制作</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p><strong>注：</strong>每周五晚上有网页制作课程，这是我最喜欢的课程之一！</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>&copy; 2024 穆斯塔怕的个人网站 | 学习规划</p>
+        </footer>
+    </div>
+</body>
+</html>

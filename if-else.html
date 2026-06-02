@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num=num=Number(prompt("请输入一个0-100之间的数字:",""));
+        if(isNaN(num))
+            document.write("你输入的不是数字，请确认你的输入");
+        else if(num<0||num>100)
+            document.write("你输入数字范围不在0-100之间");
+        else
+            document.write("你输入数字是:"+num);
+    </script>
+</body>
+</html>

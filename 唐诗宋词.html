@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐诗宋词 - 穆斯塔怕的个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 唐诗宋词专用样式 */
+        .poetry-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .poetry-nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .poetry-nav h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .poetry-nav ol {
+            list-style-position: inside;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding-left: 20px;
+        }
+        
+        .poetry-nav a {
+            color: #495057;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .poetry-nav a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .poetry-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .poetry-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .poetry-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .poetry-content {
+            font-size: 1.2em;
+            line-height: 2.2;
+            text-align: center;
+            font-family: 'SimSun', serif;
+            color: #333;
+            white-space: pre-line;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .poetry-nav ol {
+                grid-template-columns: 1fr;
+            }
+            
+            .poetry-content {
+                font-size: 1.1em;
+                line-height: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header>
+            <h1>唐诗宋词</h1>
+            <p>中国古典文学的瑰宝</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav>
+            <div class="nav-container">
+                <a href="首页.html" target="_blank">首页</a>
+                <a href="我的作品.html" target="_blank">我的作品</a>
+                <a href="个人成长.html" target="_blank">个人成长</a>
+                <a href="课程表.html" target="_blank">课程表</a>
+                <a href="简历.html" target="_blank">简历</a>
+                <a href="电影.html" target="_blank">电影</a>
+                <a href="注册.html" target="_blank">注册</a>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <main>
+            <div class="poetry-container">
+                <!-- 诗词导航 -->
+                <div class="poetry-nav">
+                    <h2>诗词目录</h2>
+                    <ol>
+                        <li><a href="#静夜思">《静夜思》- 李白</a></li>
+                        <li><a href="#春晓">《春晓》- 孟浩然</a></li>
+                        <li><a href="#望岳">《望岳》- 杜甫</a></li>
+                        <li><a href="#登鹳雀楼">《登鹳雀楼》- 王之涣</a></li>
+                        <li><a href="#黄鹤楼送孟浩然之广陵">《黄鹤楼送孟浩然之广陵》- 李白</a></li>
+                        <li><a href="#水调歌头·明月几时有">《水调歌头·明月几时有》- 苏轼</a></li>
+                        <li><a href="#虞美人·春花秋月何时了">《虞美人·春花秋月何时了》- 李煜</a></li>
+                        <li><a href="#念奴娇·赤壁怀古">《念奴娇·赤壁怀古》- 苏轼</a></li>
+                        <li><a href="#雨霖铃·寒蝉凄切">《雨霖铃·寒蝉凄切》- 柳永</a></li>
+                        <li><a href="#声声慢·寻寻觅觅">《声声慢·寻寻觅觅》- 李清照</a></li>
+                    </ol>
+                </div>
+
+                <!-- 诗词内容 -->
+                <section id="静夜思" class="poetry-section">
+                    <h2>《静夜思》 - 李白</h2>
+                    <div class="poetry-content">
+床前明月光，疑是地上霜。
+举头望明月，低头思故乡。
+                    </div>
+                </section>
+
+                <section id="春晓" class="poetry-section">
+                    <h2>《春晓》 - 孟浩然</h2>
+                    <div class="poetry-content">
+春眠不觉晓，处处闻啼鸟。
+夜来风雨声，花落知多少。
+                    </div>
+                </section>
+
+                <section id="望岳" class="poetry-section">
+                    <h2>《望岳》 - 杜甫</h2>
+                    <div class="poetry-content">
+岱宗夫如何？齐鲁青未了。
+造化钟神秀，阴阳割昏晓。
+荡胸生曾云，决眦入归鸟。
+会当凌绝顶，一览众山小。
+                    </div>
+                </section>
+
+                <section id="登鹳雀楼" class="poetry-section">
+                    <h2>《登鹳雀楼》 - 王之涣</h2>
+                    <div class="poetry-content">
+白日依山尽，黄河入海流。
+欲穷千里目，更上一层楼。
+                    </div>
+                </section>
+
+                <section id="黄鹤楼送孟浩然之广陵" class="poetry-section">
+                    <h2>《黄鹤楼送孟浩然之广陵》 - 李白</h2>
+                    <div class="poetry-content">
+故人西辞黄鹤楼，烟花三月下扬州。
+孤帆远影碧空尽，唯见长江天际流。
+                    </div>
+                </section>
+
+                <section id="水调歌头·明月几时有" class="poetry-section">
+                    <h2>《水调歌头·明月几时有》 - 苏轼</h2>
+                    <div class="poetry-content">
+明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年。
+我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间。
+转朱阁，低绮户，照无眠。
+不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。
+但愿人长久，千里共婵娟。
+                    </div>
+                </section>
+
+                <section id="虞美人·春花秋月何时了" class="poetry-section">
+                    <h2>《虞美人·春花秋月何时了》 - 李煜</h2>
+                    <div class="poetry-content">
+春花秋月何时了？往事知多少。
+小楼昨夜又东风，故国不堪回首月明中。
+雕栏玉砌应犹在，只是朱颜改。
+问君能有几多愁？恰似一江春水向东流。
+                    </div>
+                </section>
+
+                <section id="念奴娇·赤壁怀古" class="poetry-section">
+                    <h2>《念奴娇·赤壁怀古》 - 苏轼</h2>
+                    <div class="poetry-content">
+大江东去，浪淘尽，千古风流人物。
+故垒西边，人道是，三国周郎赤壁。
+乱石穿空，惊涛拍岸，卷起千堆雪。
+江山如画，一时多少豪杰。
+遥想公瑾当年，小乔初嫁了，雄姿英发。
+羽扇纶巾，谈笑间，樯橹灰飞烟灭。
+故国神游，多情应笑我，早生华发。
+人生如梦，一尊还酹江月。
+                    </div>
+                </section>
+
+                <section id="雨霖铃·寒蝉凄切" class="poetry-section">
+                    <h2>《雨霖铃·寒蝉凄切》 - 柳永</h2>
+                    <div class="poetry-content">
+寒蝉凄切，对长亭晚，骤雨初歇。
+都门帐饮无绪，留恋处，兰舟催发。
+执手相看泪眼，竟无语凝噎。
+念去去，千里烟波，暮霭沉沉楚天阔。
+多情自古伤离别，更那堪冷落清秋节。
+今宵酒醒何处？杨柳岸，晓风残月。
+此去经年，应是良辰好景虚设。
+便纵有千种风情，更与何人说！
+                    </div>
+                </section>
+
+                <section id="声声慢·寻寻觅觅" class="poetry-section">
+                    <h2>《声声慢·寻寻觅觅》 - 李清照</h2>
+                    <div class="poetry-content">
+寻寻觅觅，冷冷清清，凄凄惨惨戚戚。
+乍暖还寒时候，最难将息。
+三杯两盏淡酒，怎敌他晚来风急！
+雁过也，正伤心，却是旧时相识。
+满地黄花堆积，憔悴损，如今有谁堪摘？
+守着窗儿，独自怎生得黑！
+梧桐更兼细雨，到黄昏、点点滴滴。
+这次第，怎一个愁字了得！
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>&copy; 2024 穆斯塔怕的个人网站 | 中国古典文学欣赏</p>
+        </footer>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // 返回顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

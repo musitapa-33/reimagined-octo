@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="txt" readonly><br>
+        <input type="button" id="AC" value="AC" onclick="clear()">  
+        <input type="button" onclick="tnumber(this.value)" value="/">
+        <input type="button" onclick="tnumber(this.value)" value="%">
+        <br>
+
+        <input type="button" id="Seven" onclick="tnumber(this.value)" value="7">
+        <input type="button" id="Eight" onclick="tnumber(this.value)" value="8">
+        <input type="button" id="Nine" onclick="tnumber(this.value)" value="9">
+        <input type="button"  onclick="tnumber(this.value)" value="+">
+        <br>
+
+        <input type="button" id="Four" onclick="tnumber(this.value)" value="4">
+        <input type="button" id="Five" onclick="tnumber(this.value)" value="5">
+        <input type="button" id="Six" onclick="tnumber(this.value)" value="6">
+        <input type="button"  onclick="tnumber(this.value)" value="-">
+        <br>
+
+        <input type="button" id="One" onclick="tnumber(this.value)" value="1">
+        <input type="button" id="Two" onclick="tnumber(this.value)" value="2">
+        <input type="button" id="Three" onclick="tnumber(this.value)" value="3">
+        <input type="button"  onclick="tnumber(this.value)" value="*">
+        <br>
+
+        <input type="button" id="Zero" onclick="tnumber(this.value)" value="0">
+        <input type="button" id="Dot" onclick="tnumber(this.value)" value=".">
+        <input type="button"  onclick="tnumber(this.value)" value="=">
+        <br>
+    </div>
+
+    <script type="text/javascript">
+        var text=document.getElementById("txt");
+        var numObJ="";
+        var Total=0;
+
+    function tnumber(obj)
+    {
+        numObJ+=obj;
+        text.value=numObJ;
+    }
+
+    function calculator()
+    {
+        var str=text.value;
+        Total=eval(text.value);
+        text.value=str+"="+Total;
+            numObJ="";
+    }
+
+    function clear()
+    {
+        text.value="";
+        numObJ="";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影赏析网 - 《当幸福来敲门》</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .movie-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .movie-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .movie-header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .movie-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .movie-content h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        .movie-content h3 {
+            color: #34495e;
+            font-size: 1.4rem;
+            margin: 25px 0 15px 0;
+            background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .movie-content h4 {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+        
+        .movie-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .comments-section {
+            margin: 30px 0;
+        }
+        
+        .comments-section details {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .comments-section summary {
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        
+        .comments-section summary:hover {
+            background: #2980b9;
+        }
+        
+        .comment {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .comment:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ratings-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .ratings-section h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .rating-item {
+            margin: 15px 0;
+        }
+        
+        .rating-label {
+            display: inline-block;
+            width: 100px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        progress {
+            width: calc(100% - 110px);
+            height: 20px;
+            border-radius: 10px;
+            border: none;
+            background: #e0e0e0;
+            margin-left: 10px;
+        }
+        
+        progress::-webkit-progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        
+        progress::-webkit-progress-value {
+            background: linear-gradient(90deg, #3498db 0%, #2ecc71 100%);
+            border-radius: 10px;
+        }
+        
+        progress::-moz-progress-bar {
+            background: linear-gradient(90deg, #3498db 0%, #2ecc71 100%);
+            border-radius: 10px;
+        }
+        
+        meter {
+            width: calc(100% - 110px);
+            height: 25px;
+            margin-left: 10px;
+        }
+        
+        meter::-webkit-meter-bar {
+            background: #e0e0e0;
+            border-radius: 12px;
+            border: none;
+        }
+        
+        meter::-webkit-meter-optimum-value {
+            background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
+            border-radius: 12px;
+        }
+        
+        meter::-webkit-meter-suboptimum-value {
+            background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+            border-radius: 12px;
+        }
+        
+        meter::-webkit-meter-even-less-good-value {
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 12px;
+        }
+        
+        meter::-moz-meter-bar {
+            border-radius: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .movie-container {
+                padding: 10px;
+            }
+            
+            .movie-header h1 {
+                font-size: 2rem;
+            }
+            
+            .movie-content {
+                padding: 20px;
+            }
+            
+            .rating-label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            progress, meter {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: linear-gradient(135deg, #2980b9, #1f6dad);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-container">
+                <a href="首页.html" target="_blank">返回首页</a>
+                <a href="我的作品.html" target="_blank">我的作品</a>
+                <a href="唐诗宋词.html" target="_blank">唐诗宋词</a>
+                <a href="个人成长.html" target="_blank">个人成长</a>
+                <a href="课程表.html" target="_blank">课程表</a>
+                <a href="简历.html" target="_blank">简历</a>
+                <a href="注册.html" target="_blank">注册</a>
+            </div>
+        </nav>
+        
+        <main>
+            <div class="movie-container">
+                <div class="movie-header">
+                    <h1>电影赏析网</h1>
+                </div>
+                
+                <div class="movie-content">
+                    <h2>《当幸福来敲门》剧情介绍</h2>
+                    
+                    <div class="video-container">
+                        <video src="dangxingfulaiqiaomeng.mp4" controls poster="movie-poster.jpg">
+                            您的浏览器不支持视频标签。请更新浏览器版本或使用其他浏览器。
+                        </video>
+                    </div>
+                    
+                    <p>《当幸福来敲门》是一部由真实故事改编的电影，它讲述了一个普通人在困境中挣扎，最终实现梦想的励志旅程。这部电影不仅给观众带来了感动，更引发了人们对于幸福、梦想和坚持的深刻思考。</p>
+                    
+                    <h3>——主人公的困境与挑战</h3>
+                    <p>电影的主人公是克里斯·加德纳，他是一个濒临破产、老婆离家的落魄业务员。克里斯的生活陷入了谷底，他和儿子相依为命，住在收容所里，甚至一度要靠卖血来维持生计。在这个艰难的时刻，克里斯得到了一个在股票投资公司实习的机会。</p>
+                    <p>然而，这个机会并没有给他带来想象中的轻松，反而让他面临着更大的挑战。实习期间没有薪水，克里斯必须要在六个月内从二十个实习生中脱颖而出，才能得到一份正式的工作。这对于克里斯来说，几乎是一个不可能完成的任务。他不仅要努力学习股票知识，还要应对生活中的各种困难。他要照顾儿子，要解决住宿问题，要面对客户的拒绝和同事的竞争。在这个过程中，克里斯不断地遭受挫折，但他始终没有放弃。</p>
+                    
+                    <h3>——坚持与努力的力量</h3>
+                    <p>克里斯的坚持和努力是他最终成功的关键。他每天都要早早起床，带着儿子去排队申请收容所的床位。然后，他要赶去上班，晚上还要去学习股票知识。尽管生活非常忙碌和疲惫，但克里斯从未抱怨过。他总是告诉自己："当你认为最困难的时候，其实就是你最接近成功的时候。"</p>
+                    <p>为了学习股票知识，克里斯经常去图书馆查阅资料，向同行请教经验。他还利用一切机会去结识客户，推销自己的服务。在这个过程中，克里斯遇到了很多困难和挫折。他的客户经常拒绝他，他的同事也对他冷嘲热讽。但是，克里斯并没有被这些困难打倒。他始终相信自己的能力，相信只要坚持下去，就一定能够成功。</p>
+                    
+                    <h3>——家庭的支持与温暖</h3>
+                    <p>除了自己的努力，克里斯的儿子克里斯托弗也给了他很大的支持和鼓励。克里斯托弗虽然年纪小，但他非常懂事，他理解父亲的辛苦，总是默默地陪伴在父亲身边。在收容所里，克里斯托弗和父亲一起度过了很多艰难的夜晚。他虽然没有抱怨过生活的艰苦，但他的眼神中却透露出一种对未来的渴望。</p>
+                    
+                    <div class="comments-section">
+                        <h2>《当幸福来敲门》影迷评论</h2>
+                        <details>
+                            <summary>展开评论</summary>
+                            <div class="comment">
+                                <h4>评论者A:</h4>
+                                <p>《当幸福来敲门》是一部非常值得一看的电影。它不仅让我们看到了生活的残酷，也让我们看到了人性的光辉和希望。它告诉我们，无论生活多么艰难，我们都不能放弃对幸福的追求。</p>
+                            </div>
+                            
+                            <div class="comment">
+                                <h4>评论者B:</h4>
+                                <p>《当幸福来敲门》是一部深刻而感人的电影,让我印象最为深刻的一幕，是父子俩在厕所过夜时，有人用力敲门，克里斯紧紧捂住儿子的耳朵，眼中满是无奈和痛苦。那一刻，他的无助与挣扎被展现得淋漓尽致，却也更加凸显出他作为父亲的责任与担当。这种在困境中依然坚守对家人的爱，令人动容。</p>
+                            </div>
+                            
+                            <div class="comment">
+                                <h4>评论者C：</h4>
+                                <p>这部电影不仅仅是一个励志故事，它更像是一面镜子，让我们看到生活的残酷与真实，也让我们看到人性的光辉与力量。克里斯的经历让我们明白，幸福从来不会无缘无故地降临，它总是青睐那些有准备且坚持不懈的人。在追求幸福的道路上，我们难免会遇到各种困难和挫折，但只要我们怀揣梦想，坚定信念，勇往直前，就一定能够跨越重重障碍，迎接属于自己的幸福时刻。</p>
+                            </div>
+                            
+                            <div class="comment">
+                                <h4>评论者D:</h4>
+                                <p>这部电影不仅仅是一个励志故事，它更像是一面镜子，让我们看到生活的残酷与真实，也让我们看到人性的光辉与力量。克里斯的经历让我们明白，幸福从来不会无缘无故地降临，它总是青睐那些有准备且坚持不懈的人。在追求幸福的道路上，我们难免会遇到各种困难和挫折，但只要我们怀揣梦想，坚定信念，勇往直前，就一定能够跨越重重障碍，迎接属于自己的幸福时刻。</p>
+                            </div>
+                            
+                            <div class="comment">
+                                <h4>评论者E:</h4>
+                                <p>这部电影不仅仅是一个励志故事，它更像是一面镜子，让我们看到生活的残酷与真实，也让我们看到人性的光辉与力量。克里斯的经历让我们明白，幸福从来不会无缘无故地降临，它总是青睐那些有准备且坚持不懈的人。在追求幸福的道路上，我们难免会遇到各种困难和挫折，但只要我们怀揣梦想，坚定信念，勇往直前，就一定能够跨越重重障碍，迎接属于自己的幸福时刻。</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="ratings-section">
+                        <h4>受众评分</h4>
+                        <div class="rating-item">
+                            <span class="rating-label">综合评分:</span>
+                            <progress value="92" max="100"></progress>
+                        </div>
+                        <div class="rating-item">
+                            <span class="rating-label">电影画质:</span>
+                            <meter value="85" min="0" max="100" low="60" high="80" title="85" optimum="100"></meter>
+                        </div>
+                        <div class="rating-item">
+                            <span class="rating-label">电影特效:</span>
+                            <meter value="75" min="0" max="100" low="60" high="80" title="75" optimum="100"></meter>
+                        </div>
+                        <div class="rating-item">
+                            <span class="rating-label">故事情节:</span>
+                            <meter value="96" min="0" max="100" low="60" high="80" title="96" optimum="100"></meter>
+                        </div>
+                        <div class="rating-item">
+                            <span class="rating-label">演员表现:</span>
+                            <meter value="98" min="0" max="100" low="60" high="80" title="98" optimum="100"></meter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2024 个人网站 - 电影赏析 | <a href="首页.html">返回首页</a></p>
+        </footer>
+    </div>
+    
+    <button id="scrollTop" class="scroll-top" title="返回顶部">↑</button>
+    
+    <script>
+        // 返回顶部按钮功能
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 视频加载失败时显示提示
+        const video = document.querySelector('video');
+        video.addEventListener('error', function() {
+            this.parentNode.innerHTML = '<p style="color: #e74c3c; padding: 20px; text-align: center;">视频加载失败，请检查文件路径或浏览器支持情况。</p>';
+        });
+    </script>
+</body>
+</html>

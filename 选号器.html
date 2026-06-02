@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>选号器</title>
+    <style type="text/css">
+      .inputTxt {
+        height: 500px;
+        width: 600px;
+        font-size: 300px;
+        text-align: center;
+        color: orangered;
+      }
+    </style>
+    <script language="javascript" type="text/javascript">
+      var timer;
+
+      function startScroll() {
+        var num = Math.floor(Math.random() * 60 + 1);
+        document.getElementById("mytext").value = num;
+        // 开始定时器前，将前一个定时器清除
+        clearTimeout(timer);
+        timer = setTimeout("startScroll()", 60);
+      }
+
+      function stopScroll() {
+        clearTimeout(timer);
+      }
+    </script>
+  </head>
+
+  <body>
+    <center>
+      <form name="myForm">
+        <input id="mytext" type="text" value="0" class="inputTxt" />
+        <input
+          name="start"
+          type="button"
+          value="开始"
+          onclick="startScroll()"
+        />
+        <input name="stop" type="button" value="停止" onclick="stopScroll()" />
+      </form>
+    </center>
+  </body>
+</html>

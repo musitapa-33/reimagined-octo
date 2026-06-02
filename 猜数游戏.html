@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>猜数游戏</title>
+	</head>
+	<body>
+	<script type="text/javascript" language="javascript">
+		var num=Math.floor(Math.random()*100+1);
+		do{
+			var guess =parseInt(prompt("下面进行猜数游戏\n 请输入一个1~100的整数",""));
+			if (guess > num){
+				alert("^_^,你猜的数字大了")
+				go_no = confirm("是否继续游戏？")
+			}
+			else if(guess<num){
+				alert("^_^,你猜的数字小了")
+				go_no = confirm("是否继续游戏？")
+			}
+			else{
+				alert("恭喜你，猜对了，幸运数字是:"+ num);
+				break;}
+			}while(go_on);
+				alert("谢谢参与游戏!");
+	</script>
+	</body>
+</html>
